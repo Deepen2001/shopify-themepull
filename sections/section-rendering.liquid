@@ -1,0 +1,34 @@
+<button data-render>click</button>
+<div class="hellow_data"></div>
+<div class="product_list_rendering_data"></div>
+<script>
+    const btn = document.querySelector('[data-render]');
+    btn.addEventListener('click', ()=> {
+        fetch(`${window.Shopify.routes.root}?sections=hellow-one,product-list-rendering`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((data) => {
+             console.log(data)
+            {% comment %} console.log(data)
+            document.querySelector('.data-div').innerHTML = data['hellow-one'] {% endcomment %}
+            {% comment %} const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data['hellow-one'];
+
+             document.querySelector('.data-div').innerHTML = tempDiv.querySelector('.short').innerHTML;  {% endcomment %}
+            document.querySelector('.hellow_data').innerHTML = data['hellow-one']
+            document.querySelector('.product_list_rendering_data').innerHTML = data['product-list-rendering']
+
+        })
+    })
+</script>
+{% schema %}
+{
+    "name": "section rendering",
+    "presets": [
+        {
+            "name": "section rendering"
+        }
+    ]
+}
+{% endschema %}

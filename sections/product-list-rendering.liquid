@@ -1,0 +1,34 @@
+<div class="pro-item-list">
+    {{ section.id }}
+    {% assign products = collections.all.products %}
+    {% for product in products limit: 4 %}
+        <div class="pro-item">
+            {{ product.featured_image | image_url: width: 500, height: 500 | image_tag }}
+            <h2>{{ product.title }}</h2>
+            <p>{{ product.price | money }}</p>
+        </div>
+    {% endfor %}
+</div>
+<style>
+.pro-item-list{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr)
+}
+.pro-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+</style>
+
+{% schema %}
+{
+    "name": "Product list render",
+    "presets": [
+        {
+            "name": "Product list render"
+        }
+    ]
+}
+{% endschema %}

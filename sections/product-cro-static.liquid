@@ -1,0 +1,97 @@
+<style>
+    .product-carousel-container {
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.product-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.product-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 250px; /* Adjust width of items here */
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.carousel-image img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.05);
+}
+
+.product-title {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #333;
+}
+</style>
+
+<div class="product-carousel-container">
+  <h2 class="carousel-title">{{ section.settings.title }}</h2>
+  
+  <div class="product-carousel" id="ProductCarousel-{{ section.id }}">
+    {% assign collection = collections['all'] %}
+    
+    {% for product in collection.products %}
+      <div class="carousel-item">
+        <a href="{{ product.url }}">
+          <div class="carousel-image">
+            <img src="{{ product.featured_image | img_url: '600x600', crop: 'center' }}" alt="{{ product.title }}" loading="lazy">
+          </div>
+          <div class="carousel-info">
+            <p class="product-title">{{ product.title }}</p>
+            <p class="product-price">{{ product.price | money }}</p>
+          </div>
+        </a>
+      </div>
+    {% else %}
+      <p>No products found in the "all" collection.</p>
+    {% endfor %}
+  </div>
+</div>
+<script>
+
+const carousel = document.getElementById('ProductCarousel-{{ section.id }}');
+
+function scrollCarousel(direction) {
+  const scrollAmount = 300; 
+  carousel.scrollBy({
+    left: direction === 'next' ? scrollAmount : -scrollAmount,
+    behavior: 'smooth'
+  });
+}
+
+</script>
+{% schema %}
+{
+  "name": "Product Carousel static",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Carousel static"
+    }
+  ]
+}
+{% endschema %}

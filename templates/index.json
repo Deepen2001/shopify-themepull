@@ -1,0 +1,210 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "all",
+        "products_to_show": 8,
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "shopable_video_7WNQY6": {
+      "type": "shopable-video",
+      "blocks": {
+        "card_AmzJVJ": {
+          "type": "card",
+          "settings": {
+            "product": "black-slim-fit-washed-knitted-jumper",
+            "video_url": "http://ethnic-wear-jhango.myshopify.com/cdn/shop/videos/c/vp/5567de4a7369441cb065a2e5c74b6916/5567de4a7369441cb065a2e5c74b6916.HD-1080p-3.3Mbps-35312151.mp4?v=0",
+            "show_badge": true,
+            "badge": "BEST",
+            "badge_bg_color": "#ff2a2a",
+            "badge_text_color": "#ffffff",
+            "view_count": "3.8K",
+            "custom_title": "",
+            "price_text": "",
+            "link": ""
+          }
+        },
+        "card_TdAqjX": {
+          "type": "card",
+          "settings": {
+            "product": "human-jacquard-hoodie",
+            "video_url": "https://ethnic-wear-jhango.myshopify.com/cdn/shop/videos/c/vp/e498d36c2ebf4802a6383ca49cab869c/e498d36c2ebf4802a6383ca49cab869c.HD-1080p-2.5Mbps-35312147.mp4?v=0",
+            "show_badge": true,
+            "badge": "NEW",
+            "badge_bg_color": "#2a6bff",
+            "badge_text_color": "#ffffff",
+            "view_count": "3.8K",
+            "custom_title": "",
+            "price_text": "",
+            "link": ""
+          }
+        },
+        "card_ByccH7": {
+          "type": "card",
+          "settings": {
+            "product": "element-brown-hand-work-t-shirt",
+            "video": "shopify://files/videos/ad2586f5f85d49fbb724640926afc145.HD-1080p-7.2Mbps-41739750.mp4",
+            "video_url": "",
+            "show_badge": true,
+            "badge": "NEW",
+            "badge_bg_color": "#2a6bff",
+            "badge_text_color": "#ffffff",
+            "view_count": "3.8K",
+            "custom_title": "",
+            "price_text": "",
+            "link": ""
+          }
+        },
+        "card_Mww6GE": {
+          "type": "card",
+          "settings": {
+            "product": "camel-nubuk-oily-polished-mens-boot",
+            "video_url": "https://ethnic-wear-jhango.myshopify.com/cdn/shop/videos/c/vp/5567de4a7369441cb065a2e5c74b6916/5567de4a7369441cb065a2e5c74b6916.HD-1080p-3.3Mbps-35312151.mp4?v=0",
+            "show_badge": true,
+            "badge": "NEW",
+            "badge_bg_color": "#2a6bff",
+            "badge_text_color": "#ffffff",
+            "view_count": "3.8K",
+            "custom_title": "",
+            "price_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_AmzJVJ",
+        "card_TdAqjX",
+        "card_ByccH7",
+        "card_Mww6GE"
+      ],
+      "disabled": true,
+      "name": "Shopable video",
+      "settings": {
+        "heading": "SEE PEOPLE GO GAGA OVER OUR TRADITIONALS",
+        "desktop_columns": 4,
+        "autoplay": true,
+        "muted": true,
+        "show_view_count": true,
+        "show_wishlist": false,
+        "border_radius": 0
+      }
+    },
+    "section_rendering_kz4n83": {
+      "type": "section-rendering",
+      "disabled": true,
+      "name": "section rendering",
+      "settings": {}
+    },
+    "1763889164a50f5fb5": {
+      "type": "apps",
+      "blocks": {
+        "shopable_video_shopable_video_kebWUC": {
+          "type": "shopify://apps/shopable-video/blocks/shopable-video/019aafa3-ad12-7d66-8163-c77c809e5013",
+          "settings": {
+            "heading": "SEE PEOPLE GO GAGA OVER OUR TRADITIONALS",
+            "desktop_columns": 4,
+            "autoplay": true,
+            "muted": true,
+            "show_view_count": true,
+            "show_wishlist": false,
+            "border_radius": 0
+          }
+        }
+      },
+      "block_order": [
+        "shopable_video_shopable_video_kebWUC"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "main_tab_product_iL7J9t": {
+      "type": "main-tab-product",
+      "name": "product tab",
+      "settings": {
+        "title": "All Products"
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "shopable_video_7WNQY6",
+    "section_rendering_kz4n83",
+    "1763889164a50f5fb5",
+    "main_tab_product_iL7J9t"
+  ]
+}

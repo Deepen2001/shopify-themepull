@@ -1,0 +1,121 @@
+<style>
+.product-grid-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.grid-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  /* This line creates columns that are at least 200px wide, 
+     filling the available space automatically */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px 20px; /* Vertical gap, Horizontal gap */
+}
+
+.grid-item {
+  transition: transform 0.2s ease-in-out;
+}
+
+.grid-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.grid-info {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.product-title {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+  color: #222;
+  text-decoration: none;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #666;
+}
+
+/* Hover effect */
+.grid-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Pagination Styling */
+.pagination {
+  grid-column: 1 / -1; /* Make pagination span across all columns */
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+</style>
+<div class="product-grid-container">
+  {% if section.settings.title != blank %}
+    <h2 class="grid-title">{{ section.settings.title }}</h2>
+  {% endif %}
+  
+  <div class="product-grid">
+    {% assign collection = collections['all'] %}
+    
+    {% comment %} 
+      Shopify limits loops to 50 products. 
+      Wrapping in paginate allows you to show more if needed.
+    {% endcomment %}
+    {% paginate collection.products by 48 %}
+      {% for product in collection.products %}
+        <div class="grid-item">
+          <a href="{{ product.url }}">
+            <div class="grid-image">
+              <img src="{{ product.featured_image | img_url: '600x600', crop: 'center' }}" 
+                   alt="{{ product.title }}" 
+                   loading="lazy">
+            </div>
+            <div class="grid-info">
+              <p class="product-title">{{ product.title }}</p>
+              <p class="product-price">{{ product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% else %}
+        <p>No products found in the "all" collection.</p>
+      {% endfor %}
+      
+      {% if paginate.pages > 1 %}
+        <div class="pagination">
+          {{ paginate | default_pagination }}
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "All Products"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}
